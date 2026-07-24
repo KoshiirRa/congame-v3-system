@@ -1,0 +1,49 @@
+<div class="congame-roll-card">
+  <div class="roll-header">
+    <div class="roll-title">{{label}}</div>
+    <div class="roll-actor">{{actorName}} ({{poolSize}} d8 Base)</div>
+  </div>
+
+  <div class="roll-results-summary">
+    <div class="stat-badge hits">
+      <span class="stat-label">HITS</span>
+      <span class="stat-val">{{totalHits}}</span>
+    </div>
+
+    {{#if totalExplosions}}
+    <div class="stat-badge explosions">
+      <span class="stat-label">EXPLODED</span>
+      <span class="stat-val">+{{totalExplosions}}</span>
+    </div>
+    {{/if}}
+
+    {{#if totalBotches}}
+    <div class="stat-badge botches">
+      <span class="stat-label">BOTCHES</span>
+      <span class="stat-val">{{totalBotches}}</span>
+    </div>
+    {{/if}}
+  </div>
+
+  <div class="dice-breakdown">
+    <div class="dice-label">Initial Roll:</div>
+    <div class="dice-flex">
+      {{#each initialDice}}
+      <span class="d8-die {{#if (gte this 6)}}hit{{/if}} {{#if (eq this 8)}}exploded{{/if}} {{#if (eq this 1)}}botch{{/if}}">
+        {{this}}
+      </span>
+      {{/each}}
+    </div>
+
+    {{#if explodedDice.length}}
+    <div class="dice-label" style="margin-top: 0.4rem; color: #ffaa00;">Explosion Bonus d8s:</div>
+    <div class="dice-flex">
+      {{#each explodedDice}}
+      <span class="d8-die {{#if (gte this 6)}}hit{{/if}} {{#if (eq this 8)}}exploded{{/if}} {{#if (eq this 1)}}botch{{/if}}">
+        {{this}}
+      </span>
+      {{/each}}
+    </div>
+    {{/if}}
+  </div>
+</div>

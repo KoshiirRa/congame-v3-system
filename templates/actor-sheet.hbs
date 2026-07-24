@@ -1,0 +1,104 @@
+<form class="{{cssClass}} congame-sheet-form" autocomplete="off">
+  {{!-- Sheet Header --}}
+  <header class="sheet-header">
+    <div class="header-fields">
+      <h1 class="charname">
+        <input name="name" type="text" value="{{actor.name}}" placeholder="Agent Name" />
+      </h1>
+      <div class="header-details">
+        <div class="form-group">
+          <label>SPECIES</label>
+          <input name="system.species" type="text" value="{{system.species}}" />
+        </div>
+        <div class="form-group">
+          <label>OCCUPATION</label>
+          <input name="system.occupation" type="text" value="{{system.occupation}}" />
+        </div>
+        <div class="form-group">
+          <label>TALENT POINTS</label>
+          <input name="system.progression.talentPoints" type="number" value="{{system.progression.talentPoints}}" />
+        </div>
+      </div>
+    </div>
+  </header>
+
+  {{!-- Health & Combat Stats Bar --}}
+  <div class="combat-stats-bar">
+    <div class="stat-card lethal">
+      <div class="stat-title">LETHAL HP</div>
+      <div class="stat-inputs">
+        <input name="system.health.lethal.value" type="number" value="{{system.health.lethal.value}}" /> / {{lethalHPMax}}
+      </div>
+    </div>
+
+    <div class="stat-card stun">
+      <div class="stat-title">STUN HP</div>
+      <div class="stat-inputs">
+        <input name="system.health.stun.value" type="number" value="{{system.health.stun.value}}" /> / {{stunHPMax}}
+      </div>
+    </div>
+
+    <div class="stat-card initiative">
+      <div class="stat-title">INITIATIVE</div>
+      <div class="stat-value">+{{initiativeBonus}} d8</div>
+    </div>
+  </div>
+
+  {{!-- Navigation Tabs --}}
+  <nav class="sheet-tabs tabs" data-group="primary">
+    <a class="item active" data-tab="attributes">Attributes & Skills</a>
+    <a class="item" data-tab="talents">Talents & Perks</a>
+    <a class="item" data-tab="biography">Biography</a>
+  </nav>
+
+  {{!-- Sheet Body --}}
+  <section class="sheet-body">
+    {{!-- Attributes Tab --}}
+    <div class="tab attributes" data-group="primary" data-tab="attributes">
+      <div class="grid-2col">
+        {{!-- Attributes Box --}}
+        <div class="panel-box">
+          <h2 class="panel-title">Base Attributes</h2>
+          <div class="attributes-grid">
+            {{#each system.attributes as |val key|}}
+            <div class="attribute-card">
+              <div class="attr-name">{{key}}</div>
+              <input name="system.attributes.{{key}}" type="number" value="{{val}}" min="0" />
+              <button type="button" class="roll-attribute btn-roll" data-attr="{{key}}">Roll {{val}}d8</button>
+            </div>
+            {{/each}}
+          </div>
+        </div>
+
+        {{!-- Items / Inventory --}}
+        <div class="panel-box">
+          <h2 class="panel-title">TTRPG Inventory & Gear</h2>
+          <ul class="item-list">
+            {{#each actor.items as |item|}}
+            <li class="item-row" data-item-id="{{item._id}}">
+              <span class="item-name">{{item.name}}</span>
+              <button type="button" class="roll-skill btn-roll" data-item-id="{{item._id}}">Roll</button>
+            </li>
+            {{/each}}
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    {{!-- Talents & Perks Tab --}}
+    <div class="tab talents" data-group="primary" data-tab="talents">
+      <div class="panel-box">
+        <h2 class="panel-title">Unlocked Talents & Abilities</h2>
+        <p class="help-text">Equipped and unlocked talents from Archetypes, Skill Trees, and Perks.</p>
+      </div>
+    </div>
+
+    {{!-- Biography Tab --}}
+    <div class="tab biography" data-group="primary" data-tab="biography">
+      <div class="panel-box">
+        <h2 class="panel-title">Agent Background & Operational Notes</h2>
+        {{editor system.notes target="system.notes" button=true owner=owner editable=editable}}
+      </div>
+    </div>
+  </section>
+</form>

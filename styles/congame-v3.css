@@ -1,0 +1,238 @@
+/* Congame v3 Foundry VTT System Styles */
+:root {
+  --congame-navy-deep: #020838;
+  --congame-navy-surface: #070e46;
+  --congame-navy-panel: #0d175e;
+  --congame-navy-border: #1a2a86;
+  --congame-gold: #ffd700;
+  --congame-gold-hover: #ffe44d;
+  --congame-white: #ffffff;
+  --congame-white-muted: #b4c2f0;
+  --congame-danger: #ff4d4d;
+  --congame-success: #4dff88;
+  --congame-botch: #ff3366;
+}
+
+.congame-v3.sheet.actor {
+  background: var(--congame-navy-surface);
+  color: var(--congame-white);
+  font-family: 'Inter', sans-serif;
+}
+
+.congame-v3 .sheet-header {
+  border-bottom: 2px solid var(--congame-gold);
+  padding-bottom: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.congame-v3 .charname input {
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: var(--congame-gold);
+  background: var(--congame-navy-panel);
+  border: 1px solid var(--congame-navy-border);
+  border-radius: 4px;
+  padding: 0.4rem 0.8rem;
+  width: 100%;
+}
+
+.congame-v3 .header-details {
+  display: flex;
+  gap: 1rem;
+  margin-top: 0.5rem;
+}
+
+.congame-v3 .form-group {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.congame-v3 .form-group label {
+  font-size: 0.75rem;
+  font-weight: 800;
+  color: var(--congame-gold);
+}
+
+.congame-v3 .form-group input {
+  background: var(--congame-navy-panel);
+  border: 1px solid var(--congame-navy-border);
+  color: var(--congame-white);
+  border-radius: 4px;
+  padding: 0.3rem 0.5rem;
+}
+
+/* Combat Stats Bar */
+.congame-v3 .combat-stats-bar {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.congame-v3 .stat-card {
+  flex: 1;
+  background: var(--congame-navy-panel);
+  border: 1px solid var(--congame-navy-border);
+  border-radius: 6px;
+  padding: 0.6rem;
+  text-align: center;
+}
+
+.congame-v3 .stat-card.lethal { border-left: 4px solid var(--congame-danger); }
+.congame-v3 .stat-card.stun { border-left: 4px solid var(--congame-gold); }
+.congame-v3 .stat-card.initiative { border-left: 4px solid var(--congame-success); }
+
+.congame-v3 .stat-title {
+  font-size: 0.75rem;
+  font-weight: 800;
+  color: var(--congame-gold);
+}
+
+.congame-v3 .stat-inputs input {
+  width: 50px;
+  text-align: center;
+  background: var(--congame-navy-surface);
+  border: 1px solid var(--congame-gold);
+  color: #fff;
+  font-weight: 800;
+  border-radius: 4px;
+}
+
+/* Navigation Tabs */
+.congame-v3 .sheet-tabs {
+  border-bottom: 1px solid var(--congame-navy-border);
+  margin-bottom: 1rem;
+}
+
+.congame-v3 .sheet-tabs .item {
+  color: var(--congame-white-muted);
+  font-weight: 700;
+  padding: 0.5rem 1rem;
+}
+
+.congame-v3 .sheet-tabs .item.active {
+  color: var(--congame-gold);
+  border-bottom: 2px solid var(--congame-gold);
+}
+
+/* Attributes Grid */
+.congame-v3 .grid-2col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.congame-v3 .panel-box {
+  background: var(--congame-navy-panel);
+  border: 1px solid var(--congame-navy-border);
+  border-radius: 8px;
+  padding: 1rem;
+}
+
+.congame-v3 .panel-title {
+  color: var(--congame-gold);
+  font-size: 1.1rem;
+  font-weight: 800;
+  border-bottom: 1px solid var(--congame-navy-border);
+  padding-bottom: 0.4rem;
+  margin-bottom: 0.75rem;
+}
+
+.congame-v3 .attribute-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--congame-navy-surface);
+  padding: 0.4rem 0.75rem;
+  border-radius: 4px;
+  margin-bottom: 0.5rem;
+  border: 1px solid var(--congame-navy-border);
+}
+
+.congame-v3 .attr-name {
+  font-weight: 800;
+  color: var(--congame-gold);
+  text-transform: uppercase;
+  font-size: 0.85rem;
+}
+
+.congame-v3 .attribute-card input {
+  width: 45px;
+  text-align: center;
+  background: var(--congame-navy-panel);
+  border: 1px solid var(--congame-gold);
+  color: #fff;
+  font-weight: 800;
+  border-radius: 4px;
+}
+
+.congame-v3 .btn-roll {
+  background: var(--congame-gold);
+  color: var(--congame-navy-deep);
+  border: none;
+  font-weight: 800;
+  padding: 0.25rem 0.6rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.75rem;
+}
+
+.congame-v3 .btn-roll:hover {
+  background: var(--congame-gold-hover);
+}
+
+/* Custom d8 Chat Card Styling */
+.congame-roll-card {
+  background: #070e46;
+  border: 2px solid #ffd700;
+  border-radius: 8px;
+  padding: 0.85rem;
+  color: #ffffff;
+}
+
+.congame-roll-card .roll-title {
+  font-size: 1.1rem;
+  font-weight: 900;
+  color: #ffd700;
+  text-transform: uppercase;
+}
+
+.congame-roll-card .roll-actor {
+  font-size: 0.8rem;
+  color: #b4c2f0;
+}
+
+.congame-roll-card .roll-results-summary {
+  display: flex;
+  gap: 0.5rem;
+  margin: 0.6rem 0;
+}
+
+.congame-roll-card .stat-badge {
+  flex: 1;
+  padding: 0.4rem;
+  border-radius: 4px;
+  text-align: center;
+}
+
+.congame-roll-card .stat-badge.hits { background: #ffd700; color: #020838; font-weight: 900; }
+.congame-roll-card .stat-badge.explosions { background: #ffaa00; color: #020838; font-weight: 900; }
+.congame-roll-card .stat-badge.botches { background: #ff3366; color: #ffffff; font-weight: 900; }
+
+.congame-roll-card .d8-die {
+  display: inline-block;
+  width: 28px;
+  height: 28px;
+  line-height: 28px;
+  text-align: center;
+  border-radius: 4px;
+  font-weight: 800;
+  font-size: 0.95rem;
+  background: #0d175e;
+  border: 1px solid #1a2a86;
+  margin: 2px;
+}
+
+.congame-roll-card .d8-die.hit { background: #ffd700; color: #020838; border-color: #fff; }
+.congame-roll-card .d8-die.exploded { background: #ffaa00; color: #020838; border-color: #fff; }
+.congame-roll-card .d8-die.botch { background: #ff3366; color: #fff; border-color: #ff4d4d; }
