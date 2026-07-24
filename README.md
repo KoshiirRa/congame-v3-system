@@ -1,6 +1,6 @@
 # Congame v3 TTRPG - Official Foundry VTT Game System
 
-Official Foundry VTT (v11/v12 compatible) game system for the **Congame v3 TTRPG**.
+Official Foundry VTT (v11 / v12 / v13+ compatible) game system for the **Congame v3 TTRPG**.
 
 ---
 
@@ -14,8 +14,8 @@ Official Foundry VTT (v11/v12 compatible) game system for the **Congame v3 TTRPG
   - Custom styled chat cards in Foundry chat log.
 - **Dual Attribute Skill Pools**:
   - Skill dice pools derived from $\text{Attr}_1 + \text{Attr}_2$.
-- **Terran Alliance Aesthetic**:
-  - Sleek dark navy (`#070e46`) and gold (`#ffd700`) styling matching the Congame v3 Character Manager.
+- **Terran Alliance Dark Navy Aesthetic**:
+  - Overrides default Foundry parchment backgrounds with sleek dark navy (`#020838` / `#070e46`) and gold (`#ffd700`) styling matching the Congame v3 Character Manager.
 - **Actor & Item DataModels**:
   - Full support for `character` and `npc` actors.
   - Support for `skill`, `talent`, `perk`, `weapon`, and `equipment` item documents.
