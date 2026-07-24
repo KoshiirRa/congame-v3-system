@@ -2,7 +2,7 @@
   "id": "congame-v3",
   "title": "Congame v3 TTRPG",
   "description": "Official Foundry VTT game system for Congame v3 TTRPG featuring a d8 hit-based dice pool system (6+ hits, 8s explode, 1s botch), dual attribute skills, archetype talent trees, and perk progression.",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "compatibility": {
     "minimum": "11",
     "verified": "12"

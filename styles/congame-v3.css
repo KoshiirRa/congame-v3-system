@@ -13,10 +13,40 @@
   --congame-botch: #ff3366;
 }
 
+/* Override Foundry VTT Window Containers & Parchment Backgrounds */
+.window-app.congame-v3,
+.window-app.congame-v3 .window-content,
+.congame-v3.sheet,
+.congame-v3 .window-content,
 .congame-v3.sheet.actor {
-  background: var(--congame-navy-surface);
-  color: var(--congame-white);
-  font-family: 'Inter', sans-serif;
+  background: var(--congame-navy-deep) !important;
+  background-image: none !important;
+  color: var(--congame-white) !important;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+/* Window Header Styling */
+.window-app.congame-v3 .window-header {
+  background: var(--congame-navy-surface) !important;
+  border-bottom: 1px solid var(--congame-gold) !important;
+  color: var(--congame-gold) !important;
+}
+
+.window-app.congame-v3 .window-header .window-title {
+  color: var(--congame-gold) !important;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.window-app.congame-v3 .window-header a {
+  color: var(--congame-gold) !important;
+}
+
+/* Sheet Form Container */
+.congame-v3 .congame-sheet-form {
+  background: var(--congame-navy-deep);
+  padding: 0.5rem;
+  min-height: 100%;
 }
 
 .congame-v3 .sheet-header {
@@ -102,12 +132,14 @@
 .congame-v3 .sheet-tabs {
   border-bottom: 1px solid var(--congame-navy-border);
   margin-bottom: 1rem;
+  display: flex;
 }
 
 .congame-v3 .sheet-tabs .item {
   color: var(--congame-white-muted);
   font-weight: 700;
   padding: 0.5rem 1rem;
+  text-decoration: none;
 }
 
 .congame-v3 .sheet-tabs .item.active {
